@@ -1,0 +1,19 @@
+name: Deploy to Hugging Face Spaces
+
+on:
+  push:
+    branches: [ main, master ]  # Sesuaikan dengan branch utama
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy to Hugging Face Spaces
+        uses: huggingface/actions-deploy-space@v1.0.0
+        with:
+          repo_id: yocelyn/praktekoopsatu  # Ganti dengan username dan nama space
+          token: ${{ secrets.HF_TOKEN }}
+          
