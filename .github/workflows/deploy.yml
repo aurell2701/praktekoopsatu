@@ -1,18 +1,22 @@
-ame: Deploy to Hugging Face Spaces
+name: 🚀 Deploy ke Hugging Face
 
 on:
   push:
-    branches: [ main, master ]  # Sesuaikan dengan branch utama
+    branches: [ main ]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Deploy to Hugging Face Spaces
-        uses: huggingface/actions-deploy-space@v1.0.0
+      - name: 🔎 Checkout kode (non-shallow)
+        uses: actions/checkout@v3
         with:
-          repo_id: yocelyn/praktekoopsatu  # Ganti dengan username dan nama space
-          token: ${{ secrets.HF_TOKEN }}
+          fetch-depth: 0  # Ambil seluruh history, penting!
+
+      - name: 🔁 Push ke Hugging Face
+        run: |
+          git config --global user.email "action@github.com"
+          git config --global user.name "GitHub Action"
+
+          git remote add hf https://yocelyn:${{ secrets.HF_TOKEN }}@huggingface.co/spaces/yocelyn/praktekoopsatu
+          git push -f hf main
