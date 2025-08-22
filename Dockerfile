@@ -1,4 +1,4 @@
-# Gunakan official PHP image dengan Apache
+
 FROM php:8.2-apache
 
 # Salin file PHP ke direktori web
