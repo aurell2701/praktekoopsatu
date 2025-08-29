@@ -1,13 +1,13 @@
 <?php
 // index.php
-$nama = "Peserta Praktik";
+$nama = "Kamuu ";
 $waktu = date("Y-m-d H:i:s");
 ?>
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Website PHP di Hugging Face</title>
+    <title>Website Aurell di Hugging Face</title>
     <style>
         body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
         .container { max-width: 600px; margin: 0 auto; }
@@ -20,7 +20,7 @@ $waktu = date("Y-m-d H:i:s");
         <p>Halo <strong><?= htmlspecialchars($nama) ?></strong></p>
         <div class="box">
             <p>Waktu server: <code><?= $waktu ?></code></p>
-            <p>Dijalankan di <strong>Docker</strong> di Hugging Face Spaces ✅</p>
+            <p>Semoga bisa <strong> Bisa </strong> Menikmati Pengalaman Baru </p>
         </div>
     </div>
 </body>
