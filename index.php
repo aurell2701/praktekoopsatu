@@ -19,7 +19,7 @@ $waktu = date("Y-m-d H:i:s");
         <h1>Selamat Datang di Website Aurell!</h1>
         <p>Halo <strong><?= htmlspecialchars($nama) ?></strong></p>
         <div class="box">
-            <p>Semoga bisa <strong> Bisa </strong> Menikmati Pengalaman Belajar Baru </p>
+            <p>Semoga Bisa <strong> Belajar dan Menambah Pengetahuan Baru </strong> Disini </p>
         </div>
     </div>
 </body>
