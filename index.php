@@ -20,6 +20,8 @@ $waktu = date("Y-m-d H:i:s");
         <p>Halo <strong><?= htmlspecialchars($nama) ?></strong></p>
         <div class="box">
             <p>Semoga Bisa <strong> Belajar dan Menambah Pengetahuan Baru </strong> Disini </p>
+            
+            <a href="latihan1.php">Hitung Persegi Panjang</a>
         </div>
     </div>
 </body>
