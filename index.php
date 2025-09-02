@@ -21,7 +21,7 @@ $waktu = date("Y-m-d H:i:s");
         <div class="box">
             <p>Semoga Bisa <strong> Belajar dan Menambah Pengetahuan Baru </strong> Disini </p>
             
-            <a href="latihan1.php"> Rumus Luas Persegi Panjang</a>
+            <a href="latihan1.php"> Tugas 1</a>
         </div>
     </div>
 </body>
