@@ -12,6 +12,22 @@ $waktu = date("Y-m-d H:i:s");
         body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
         .container { max-width: 600px; margin: 0 auto; }
         .box { background: #f0f8ff; padding: 20px; border-radius: 10px; margin-top: 20px; }
+
+        /* tombol tugas */
+        .tugas-btn {
+            display: inline-block; 
+            padding: 10px 20px; 
+            background-color: #4CAF50;
+            color: white; 
+            text-decoration: none; 
+            border-radius: 8px; 
+            font-weight: bold;
+            transition: 0.3s;
+            margin: 5px; /* kasih jarak antar tombol */
+        }
+        .tugas-btn:hover {
+            background-color: #45a049; /* warna saat hover */
+        }
     </style>
 </head>
 <body>
@@ -21,23 +37,9 @@ $waktu = date("Y-m-d H:i:s");
         <div class="box">
             <p>Semoga Bisa <strong> Belajar dan Menambah Pengetahuan Baru </strong> Disini </p>
             
-            <a href="latihan1.php"> Tugas 1</a>
-            <style>
-    .tugas-btn {
-        display: inline-block; 
-        padding: 10px 20px; 
-        background-color: #4CAF50;
-        color: white; 
-        text-decoration: none; 
-        border-radius: 8px; 
-        font-weight: bold;
-        transition: 0.3s; 
-    }
-    .tugas-btn:hover {
-        background-color: #45a049; /* warna saat hover */
-    }
-</style>
-            <a href="latihan2.php"> Tugas 2</a>
+            <!-- Tambahkan class tugas-btn -->
+            <a href="latihan1.php" class="tugas-btn">Tugas 1</a>
+            <a href="latihan2.php" class="tugas-btn">Tugas 2</a>
         </div>
     </div>
 </body>
