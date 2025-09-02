@@ -1,35 +1,33 @@
 <?php
 class PersegiPanjang {
-    // Property
+    // properti
     public $panjang;
     public $lebar;
 
-    // Constructor
-    public function __construct($panjang, $lebar) {
-        $this->panjang = $panjang;
-        $this->lebar = $lebar;
+    // method untuk menghitung luas
+    public function luas() {
+        $hasil = $this->panjang * $this->lebar;
+        return "Panjang: $this->panjang<br>
+        Lebar: $this->lebar<br>
+        Luas: $hasil";
     }
 
-    // Method untuk menghitung luas
-    public function hitungLuas() {
-        return $this->panjang * $this->lebar;
-    }
-
-    // Method untuk menghitung keliling
-    public function hitungKeliling() {
-        return 2 * ($this->panjang + $this->lebar);
+    // method untuk menghitung keliling
+    public function keliling() {
+        $hasil = 2 * ($this->panjang + $this->lebar);
+        return "Panjang: $this->panjang<br>
+        Lebar: $this->lebar<br>
+        Keliling: $hasil";
     }
 }
 
-// Membuat objek
-$persegi1 = new PersegiPanjang(10, 5);
-$persegi2 = new PersegiPanjang(7, 4);
+$hsl = new PersegiPanjang();
+$hsl->panjang = 15;
+$hsl->lebar = 10;
 
 // Menampilkan hasil
-echo "Persegi Panjang 1:<br>";
-echo "Luas: " . $persegi1->hitungLuas() . "<br>";
-echo "Keliling: " . $persegi1->hitungKeliling() . "<br><br>";
-
-echo "Persegi Panjang 2:<br>";
-echo "Luas: " . $persegi2->hitungLuas() . "<br>";
-echo "Keliling: " . $persegi2->hitungKeliling();
+echo "<h3>Latihan No 1</h3>";
+echo $hsl->luas();
+echo "<br>";
+echo "<br>";
+echo $hsl->keliling();
