@@ -18,15 +18,15 @@ $waktu = date("Y-m-d H:i:s");
             display: inline-block; 
             padding: 10px 20px; 
             background-color: #4CAF50;
-            color: white; 
+            color: black; 
             text-decoration: none; 
             border-radius: 8px; 
             font-weight: bold;
             transition: 0.3s;
-            margin: 5px; /* kasih jarak antar tombol */
+            margin: 5px; 
         }
         .tugas-btn:hover {
-            background-color: #45a049; /* warna saat hover */
+            background-color: #45a049;
         }
     </style>
 </head>
