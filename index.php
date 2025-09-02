@@ -22,6 +22,21 @@ $waktu = date("Y-m-d H:i:s");
             <p>Semoga Bisa <strong> Belajar dan Menambah Pengetahuan Baru </strong> Disini </p>
             
             <a href="latihan1.php"> Tugas 1</a>
+            <style>
+    .tugas-btn {
+        display: inline-block; 
+        padding: 10px 20px; 
+        background-color: #4CAF50;
+        color: white; 
+        text-decoration: none; 
+        border-radius: 8px; 
+        font-weight: bold;
+        transition: 0.3s; 
+    }
+    .tugas-btn:hover {
+        background-color: #45a049; /* warna saat hover */
+    }
+</style>
             <a href="latihan2.php"> Tugas 2</a>
         </div>
     </div>
