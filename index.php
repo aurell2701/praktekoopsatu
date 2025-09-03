@@ -54,10 +54,10 @@ $waktu = date("Y-m-d H:i:s");
 </head>
 <body>
     <div class="container">
-        <h1>Selamat Datang di Website Aurell !</h1>
+        <h1>Selamat Datang di Website Aurell</h1>
         <p>Halo <strong><?= htmlspecialchars($nama) ?></strong></p>
         <div class="box">
-            <p>Semoga Bisa <strong> Belajar dan Menambah Pengetahuan Baru </strong> Disini </p>
+            <p>Semoga Bisa <strong> Belajar dan Menambah Pengetahuan Baru </strong> Disini ! </p>
             <a href="latihan1.php" class="tugas-btn">Tugas 1</a>
             <a href="latihan2.php" class="tugas-btn">Tugas 2</a>
         </div>
