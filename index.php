@@ -23,7 +23,7 @@ $waktu = date("Y-m-d H:i:s");
             margin: 0 auto; 
         }
         .box { 
-            background-color: #FFFFF0; /* Putih gading */
+            background-color: #FFFFF0; 
             padding: 20px;
             border-radius: 15px;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
