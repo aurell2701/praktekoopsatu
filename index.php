@@ -1,4 +1,4 @@
-<?php
+<?php 
 // index.php
 $nama = "Kamuu ";
 $waktu = date("Y-m-d H:i:s");
@@ -7,7 +7,7 @@ $waktu = date("Y-m-d H:i:s");
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Selamat Datang di website Aurell !</title>
+    <title>Website Aurell di Hugging Face</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         body { 
@@ -17,7 +17,10 @@ $waktu = date("Y-m-d H:i:s");
             background: linear-gradient(to bottom, #e6f7ff, #ffffff); 
             color: #2c3e50; 
         }
-        .container { max-width: 600px; margin: 0 auto; }
+        .container { 
+            max-width: 600px; 
+            margin: 0 auto; 
+        }
         .box { 
             background: #f0f8ff; 
             padding: 20px; 
@@ -25,7 +28,6 @@ $waktu = date("Y-m-d H:i:s");
             margin-top: 20px; 
             box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
         }
-
         .tugas-btn {
             display: inline-block; 
             padding: 12px 24px; 
@@ -48,3 +50,15 @@ $waktu = date("Y-m-d H:i:s");
         }
     </style>
 </head>
+<body>
+    <div class="container">
+        <h1>Selamat Datang di Website Aurell !</h1>
+        <p>Halo <strong><?= htmlspecialchars($nama) ?></strong></p>
+        <div class="box">
+            <p>Semoga Bisa <strong> Belajar dan Menambah Pengetahuan Baru </strong> Disini </p>
+            <a href="latihan1.php" class="tugas-btn">Tugas 1</a>
+            <a href="latihan2.php" class="tugas-btn">Tugas 2</a>
+        </div>
+    </div>
+</body>
+</html>
