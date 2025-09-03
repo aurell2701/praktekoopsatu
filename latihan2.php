@@ -33,7 +33,7 @@ class Produk {
 }
 
 // Buat objek produk
-$produk = new Produk("Buku", 30000, 10);
+$produk = new Produk("Piyama", 80000, 25);
 
 // Menampilkan hasil
 echo "<h3>Latihan No 2</h3>";
