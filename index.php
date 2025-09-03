@@ -23,11 +23,13 @@ $waktu = date("Y-m-d H:i:s");
             margin: 0 auto; 
         }
         .box { 
-            background: #87CEEB;
-            padding: 25px; 
-            border-radius: 15px; 
-            margin-top: 20px; 
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
+            background-color: #FFFFF0; /* Putih gading */
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            width: 50%;
+            margin: 0 auto;
+            text-align: center;
         }
         .tugas-btn {
             display: inline-block; 
