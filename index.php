@@ -22,30 +22,28 @@ $waktu = date("Y-m-d H:i:s");
             max-width: 600px; 
             margin: 0 auto; 
         }
-        .box { 
-            background-color: #FFFFF0; 
+       .box {
+            background-color: #FFFFF0; /* Putih gading */
             padding: 20px;
             border-radius: 15px;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-            width: 50%;
-            margin: 0 auto;
+            width: 70%; /* biar memanjang ke samping */
+            margin: 20px auto;
             text-align: center;
         }
         .tugas-btn {
-            display: inline-block; 
-            padding: 12px 24px; 
-            background-color:#1E3A8A; 
-            color: white; 
-            text-decoration: none; 
-            border-radius: 10px; 
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #1E3A8A; /* biru navy elegan */
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
             font-weight: bold;
             transition: 0.3s;
-            margin: 8px; 
-            box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+            margin: 5px; /* biar ada jarak antar tombol */
         }
         .tugas-btn:hover {
-            background-color: #3399ff; 
-            transform: scale(1.05); 
+            background-color: #2563EB; /* biru lebih terang pas hover */
         }
         h1 {
             font-size: 1.8em; 
