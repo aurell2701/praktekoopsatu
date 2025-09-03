@@ -23,7 +23,7 @@ $waktu = date("Y-m-d H:i:s");
             margin: 0 auto; 
         }
         .box { 
-            background: #003366;
+            background: #87CEEB;
             padding: 25px; 
             border-radius: 15px; 
             margin-top: 20px; 
@@ -32,7 +32,7 @@ $waktu = date("Y-m-d H:i:s");
         .tugas-btn {
             display: inline-block; 
             padding: 12px 24px; 
-            background-color:#87CEEB; 
+            background-color:#1E3A8A; 
             color: white; 
             text-decoration: none; 
             border-radius: 10px; 
@@ -49,7 +49,7 @@ $waktu = date("Y-m-d H:i:s");
             font-size: 1.8em; 
             font-weight: 700;
             white-space: nowrap; 
-            color: #000000; 
+            color: #2C3E50; 
         }
         p {
             color: #000000; 
