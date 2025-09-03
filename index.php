@@ -46,8 +46,9 @@ $waktu = date("Y-m-d H:i:s");
             transform: scale(1.05); 
         }
         h1 {
-            font-size: 2.5em;
+            font-size: 1.8em; 
             font-weight: 700;
+            white-space: nowrap; 
         }
     </style>
 </head>
