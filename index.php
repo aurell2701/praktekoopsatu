@@ -15,7 +15,7 @@ $waktu = date("Y-m-d H:i:s");
             text-align: center; 
             margin-top: 50px; 
             background: linear-gradient(to bottom, #e6f7ff, #ffffff); 
-            color: #2c3e50;
+            color: #87CEEB;
             font-size: 16px;
         }
         .container { 
