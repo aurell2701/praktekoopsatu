@@ -23,7 +23,7 @@ $waktu = date("Y-m-d H:i:s");
             margin: 0 auto; 
         }
         .box { 
-            background: #87CEEB; 
+            background: #87CEEB; /* sky blue */
             padding: 20px; 
             border-radius: 15px; 
             margin-top: 20px; 
@@ -49,6 +49,10 @@ $waktu = date("Y-m-d H:i:s");
             font-size: 1.8em; 
             font-weight: 700;
             white-space: nowrap; 
+            color: #000000; 
+        }
+        p {
+            color: #000000; 
         }
     </style>
 </head>
@@ -56,8 +60,9 @@ $waktu = date("Y-m-d H:i:s");
     <div class="container">
         <h1>Selamat Datang di Website Aurell</h1>
         <p>Halo <strong><?= htmlspecialchars($nama) ?></strong></p>
+        <p>Semoga Bisa <strong> Belajar dan Menambah Pengetahuan Baru </strong> Disini ! </p>
+        
         <div class="box">
-            <p>Semoga Bisa <strong> Belajar dan Menambah Pengetahuan Baru </strong> Disini ! </p>
             <a href="latihan1.php" class="tugas-btn">Tugas 1</a>
             <a href="latihan2.php" class="tugas-btn">Tugas 2</a>
             <a href="latihan3.php" class="tugas-btn">Tugas 3</a>
