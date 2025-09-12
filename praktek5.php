@@ -1,38 +1,35 @@
 <?php
 // Buat class mobil
-class Mobil {
+class mobil
+{
   // buat property untuk class laptop
   var $pemilik;
   var $merk;
   var $warna;
   //Buat method untuk class mobil
-  function hidupkan_mobil(){
+  function hidupkan_mobil()
+  {
     return "Hidupkan Mobil anda";
   }
+  function matikan_mobil()
+  {
 
 
-  function matikan_mobil(){
     return "Matikan Mobil anda";
   }
 }
 // buat objek dari class laptop (instansiasi)
-$mobil_syahrul = new Mobil();
-//Set property
+$mobil_syahrul = new mobil();
+$mobil_rahma = new mobil();
+$mobil_yuda = new mobil();
+// set property
 $mobil_syahrul->pemilik = "Aurellya YP";
-$mobil_syahrul->merk = "Land Cruiser";
-$mobil_syahrul->warna = "Hitam Pekat";
-
-
+$mobil_rahma->pemilik = "Cynthia";
+$mobil_yuda->pemilik = "Luiz";
 // tampilkan property
-echo $mobil_syahrul->pemilik;
+echo $mobil_syahrul->pemilik; //syahrul
 echo "\n";
-echo $mobil_syahrul->merk;
+echo $mobil_rahma->pemilik; //rahma
 echo "\n";
-
-
-echo $mobil_syahrul->warna;
+echo $mobil_yuda->pemilik; //yuda
 echo "\n";
-// tampilkan method
-echo $mobil_syahrul->hidupkan_mobil();
-echo "\n";
-echo $mobil_syahrul->matikan_mobil();
