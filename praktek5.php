@@ -19,17 +19,17 @@ class mobil
   }
 }
 // buat objek dari class laptop (instansiasi)
-$mobil_syahrul = new mobil();
-$mobil_rahma = new mobil();
-$mobil_yuda = new mobil();
+$mobil_aurell = new mobil();
+$mobil_cynthia = new mobil();
+$mobil_luiz = new mobil();
 // set property
-$mobil_syahrul->pemilik = "Aurellya YP";
-$mobil_rahma->pemilik = "Cynthia";
-$mobil_yuda->pemilik = "Luiz";
+$mobil_aurell->pemilik = "Aurellya YP";
+$mobil_cynthia->pemilik = "Cynthia";
+$mobil_luiz->pemilik = "Luiz";
 // tampilkan property
-echo $mobil_syahrul->pemilik; //syahrul
+echo $mobil_aurell->pemilik; //Aurell
 echo "\n";
-echo $mobil_rahma->pemilik; //rahma
+echo $mobil_cynthia->pemilik; // Cynthia
 echo "\n";
-echo $mobil_yuda->pemilik; //yuda
+echo $mobil_luiz->pemilik; // Luiz
 echo "\n";
