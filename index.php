@@ -67,6 +67,7 @@ $waktu = date("Y-m-d H:i:s");
             <a href="latihan2.php" class="tugas-btn">Tugas 2</a>
             <a href="latihan3.php" class="tugas-btn">Tugas 3</a>
             <a href="tugasmandiri.php" class="tugas-btn">Tugas Mandiri</a>
+            <a href="praktek5.php" class="tugas-btn">Belajar bersama asdos</a>
         </div>
     </div>
 </body>
