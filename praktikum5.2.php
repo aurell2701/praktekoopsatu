@@ -17,7 +17,7 @@ class Mahasiswa{
   public function setPassword($password){
     $this->password = $password;
   }
-  // Public methods to access protected/private methods:
+  // method publik digunakan sebagai jembatan untuk mengakses property/method protected/private dalam class
   public function tampilNilaiIPK(){
     return $this->getNilaiIPK();
   }
