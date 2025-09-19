@@ -13,8 +13,6 @@ class mobil
   }
   function matikan_mobil()
   {
-
-
     return "Matikan Mobil anda";
   }
 }
