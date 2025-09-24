@@ -18,7 +18,7 @@ class Bunga {
 
     // Destructor: otomatis dijalankan saat objek dihapus
     public function __destruct() {
-        echo "Objek Bunga {$this->nama} telah dihapus dari memori.<br>";
+        echo "Objek Bunga {$this->nama} telah dihapus dari taman belakang rumah.<br>";
     }
 }
 
@@ -34,5 +34,5 @@ echo "<br>";
 // Hapus objek bunga2 secara manual
 unset($bunga2);
 
-echo "Selesai dieksekusi.<br>";
+echo "Selesai dihapus.<br>";
 ?>
