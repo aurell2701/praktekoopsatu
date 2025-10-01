@@ -1,33 +1,22 @@
 <?php
 namespace Classes;
 
-use Traits\Timestampable;
-use Interfaces\Savable;
+class Photo {
+    private $uploadDir = __DIR__ . "/../uploads/";
 
-class Photo implements Savable {
-    use Timestampable;
+    public function save($base64Image) {
+        if (!file_exists($this->uploadDir)) {
+            mkdir($this->uploadDir, 0777, true);
+        }
 
-    private string $filename;
-    private string $data;
-    const UPLOAD_DIR = "uploads/";
+        $data = explode(',', $base64Image);
+        $imageData = base64_decode($data[1]);
 
-    public function __construct(string $data) {
-        $this->data = $data;
-    }
+        $fileName = $this->uploadDir . "photo_" . time() . ".png";
 
-    public function save(): string {
-        $this->filename = self::UPLOAD_DIR . "photo_" . time() . ".png";
-        $img = str_replace('data:image/png;base64,', '', $this->data);
-        $img = str_replace(' ', '+', $img);
-        file_put_contents($this->filename, base64_decode($img));
-        return $this->filename;
-    }
-
-    public function __toString(): string {
-        return "Foto disimpan di: " . $this->filename;
-    }
-
-    public function __clone() {
-        $this->filename = self::UPLOAD_DIR . "clone_" . time() . ".png";
+        if (file_put_contents($fileName, $imageData)) {
+            return $fileName;
+        }
+        return false;
     }
 }

@@ -1,9 +1,11 @@
 <?php
 namespace Classes;
 
-final class Logger {
-    public static function log(string $message): void {
-        $time = date("H:i:s");
-        file_put_contents("log.txt", "[$time] $message\n", FILE_APPEND);
+class Logger {
+    private $logFile = "uploads/log.txt";
+
+    public function log($message) {
+        $time = date("Y-m-d H:i:s");
+        file_put_contents($this->logFile, "[$time] $message\n", FILE_APPEND);
     }
 }
