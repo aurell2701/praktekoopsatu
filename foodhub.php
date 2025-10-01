@@ -8,7 +8,6 @@ namespace FoodHubApp {
     }
 }
 
-// ==================== Global Namespace ====================
 namespace {
 
 // BUFFERING supaya echo awal aman
