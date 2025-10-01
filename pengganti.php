@@ -1,6 +1,6 @@
 <?php
 // =====================================================
-// PHP OOP Demo: Semua Materi Sekaligus
+// PHP OOP Demo: Semua Materi Sekaligus (PHP 7.2–7.3 Compatible)
 // =====================================================
 
 // ---------------------------
@@ -29,14 +29,14 @@ trait LoggerTrait {
 // 3. Interface & Abstract Class (Polymorphism)
 // ---------------------------
 interface TaskInterface {
-    public function createTask(string $name, string $desc);
+    public function createTask($name, $desc);
     public function listTasks();
 }
 
 abstract class AbstractTask implements TaskInterface {
-    protected array $tasks = [];
+    protected $tasks = [];
 
-    abstract public function taskCount(): int;
+    abstract public function taskCount();
 }
 
 // ---------------------------
@@ -46,18 +46,18 @@ class TaskManager extends AbstractTask {
     use LoggerTrait; // pakai trait
 
     // 5. Scope & Encapsulation
-    public string $managerName;
-    protected int $taskCounter = 0;
-    private array $secretNotes = [];
+    public $managerName;
+    protected $taskCounter = 0;
+    private $secretNotes = [];
 
     // 6. Class Constant
     const VERSION = "1.0";
 
     // 7. Static Property & Method
-    public static int $globalTaskCount = 0;
+    public static $globalTaskCount = 0;
 
     // 8. Constructor & Destructor (Magic Methods)
-    public function __construct(string $name) {
+    public function __construct($name) {
         $this->managerName = $name;
         $this->log("TaskManager '$name' dibuat");
     }
@@ -67,16 +67,16 @@ class TaskManager extends AbstractTask {
     }
 
     // 9. Getter & Setter (Encapsulation)
-    public function setSecretNote(string $note) {
+    public function setSecretNote($note) {
         $this->secretNotes[] = $note;
     }
 
-    public function getSecretNotes(): array {
+    public function getSecretNotes() {
         return $this->secretNotes;
     }
 
     // 10. CRUD Methods
-    public function createTask(string $name, string $desc) {
+    public function createTask($name, $desc) {
         $this->taskCounter++;
         self::$globalTaskCount++;
         $id = $this->taskCounter;
@@ -90,14 +90,14 @@ class TaskManager extends AbstractTask {
         }
     }
 
-    public function updateTask(int $id, string $name, string $desc) {
+    public function updateTask($id, $name, $desc) {
         if(isset($this->tasks[$id])) {
             $this->tasks[$id] = ['name'=>$name,'desc'=>$desc];
             $this->log("Task ID $id diupdate");
         }
     }
 
-    public function deleteTask(int $id) {
+    public function deleteTask($id) {
         if(isset($this->tasks[$id])) {
             unset($this->tasks[$id]);
             $this->log("Task ID $id dihapus");
@@ -105,13 +105,13 @@ class TaskManager extends AbstractTask {
     }
 
     // 11. Override Abstract Method
-    public function taskCount(): int {
+    public function taskCount() {
         return count($this->tasks);
     }
 
     // 12. Magic Methods __get, __set
     public function __get($name) {
-        return $this->$name ?? "Property '$name' tidak ada";
+        return isset($this->$name) ? $this->$name : "Property '$name' tidak ada";
     }
 
     public function __set($name, $value) {
@@ -151,13 +151,13 @@ class TaskManager extends AbstractTask {
 // 17. Child Class (Inheritance & Final Example)
 // ---------------------------
 class AdvancedTaskManager extends TaskManager {
-    public const VERSION = "2.0"; // override constant
+    const VERSION = "2.0"; // override constant
     final public function finalMethod() {
         echo "Ini final method, tidak bisa di override<br>";
     }
 
     // Override method
-    public function createTask(string $name, string $desc) {
+    public function createTask($name, $desc) {
         parent::createTask($name,$desc);
         echo "AdvancedTaskManager menambahkan task dengan logging tambahan<br>";
     }
@@ -167,11 +167,19 @@ class AdvancedTaskManager extends TaskManager {
 // 18. Dependency Injection
 // ---------------------------
 class User {
-    public function __construct(public string $username) {}
+    public $username;
+    public function __construct($username) {
+        $this->username = $username;
+    }
 }
 
 class App {
-    public function __construct(public User $user, public TaskManager $tm) {}
+    public $user;
+    public $tm;
+    public function __construct($user, $tm) {
+        $this->user = $user;
+        $this->tm = $tm;
+    }
 
     public function run() {
         echo "User: {$this->user->username} sedang mengelola tugas<br>";
@@ -182,9 +190,9 @@ class App {
 // 19. Object Iteration
 // ---------------------------
 class TaskCollection implements IteratorAggregate {
-    private array $tasks = [];
+    private $tasks = [];
     public function addTask($task) { $this->tasks[] = $task; }
-    public function getIterator(): Traversable {
+    public function getIterator() {
         return new ArrayIterator($this->tasks);
     }
 }
@@ -211,7 +219,7 @@ $anon = new class {
 // 22. Exception Handling
 // ---------------------------
 try {
-    $tm1->deleteTask(999); // tidak ada, akan aman tapi bisa throw exception
+    $tm1->deleteTask(999); // tidak ada, aman
 } catch(Exception $e) {
     echo "Error: ".$e->getMessage();
 } finally {
