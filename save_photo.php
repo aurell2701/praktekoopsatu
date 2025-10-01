@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . "/classes/Controllers/PhotoController.php";
+require_once __DIR__ . "/Classes/Controllers/PhotoController.php";
 
 use Controllers\PhotoController;
 
