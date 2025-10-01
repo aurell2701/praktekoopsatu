@@ -5,7 +5,7 @@ ob_start();
 echo "<h2>FoodHub - 20 Materi OOP PHP</h2><hr>";
 
 // 1️⃣ Scope
-class MenuItem { ... } // tetap sama
+class MenuItem { ... } 
 $item1 = new MenuItem("Burger",30000,5);
 echo "<b>Scope:</b> ...<br>";
 
