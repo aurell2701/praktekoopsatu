@@ -1,6 +1,6 @@
 <?php
 // =====================================================
-// PHP OOP Lengkap 20 Materi - Satu File
+// PHP OOP Lengkap 20 Materi - Satu File (Update TaskCollection)
 // =====================================================
 
 // ---------------------------
@@ -34,18 +34,13 @@ abstract class AbstractTask implements TaskInterface {
 class TaskManager extends AbstractTask {
     use LoggerTrait;
 
-    // 1. Scope: public, protected, private
     public $managerName;
     protected $taskCounter=0;
     private $secretNotes=[];
 
-    // 2. Class Constant
     const VERSION = "1.0";
-
-    // 3. Static property
     public static $globalTaskCount = 0;
 
-    // 4. Constructor & Destructor (Magic Methods)
     public function __construct($name){
         $this->managerName=$name;
         $this->log("TaskManager '$name' dibuat");
@@ -55,11 +50,11 @@ class TaskManager extends AbstractTask {
         $this->log("TaskManager '{$this->managerName}' dihancurkan");
     }
 
-    // 5. Encapsulation
+    // Encapsulation
     public function setSecretNote($note){ $this->secretNotes[]=$note; }
     public function getSecretNotes(){ return $this->secretNotes; }
 
-    // 6. CRUD Methods
+    // CRUD Methods
     public function createTask($name,$desc){
         $this->taskCounter++;
         self::$globalTaskCount++;
@@ -92,30 +87,28 @@ class TaskManager extends AbstractTask {
         }
     }
 
-    // 7. Override Abstract Method
     public function taskCount(){ return count($this->tasks); }
 
-    // 8. Magic Methods: __get, __set, __toString, __call
+    // Magic Methods
     public function __get($name){ return $this->$name ?? "Property '$name' tidak ada"; }
     public function __set($name,$value){ $this->$name=$value; }
     public function __toString(){ return "TaskManager: {$this->managerName} dengan {$this->taskCount()} tugas"; }
     public function __call($name,$args){ echo "Method '$name' tidak ditemukan: ".implode(", ",$args)."<br>"; }
 
-    // 9. __sleep & __wakeup (Serialization)
+    // Serialization
     public function __sleep(){ return ['managerName','tasks']; }
     public function __wakeup(){ $this->log("TaskManager '{$this->managerName}' di-unserialize"); }
 
-    // 10. Static Methods & Late Static Binding
+    // Static Methods
     public static function who(){ echo "TaskManager versi ".self::VERSION."<br>"; }
     public static function whoLate(){ echo "TaskManager versi ".static::VERSION."<br>"; }
 }
 
 // ---------------------------
-// 11. AdvancedTaskManager (Inheritance & Final)
+// 5. AdvancedTaskManager
 // ---------------------------
 class AdvancedTaskManager extends TaskManager {
     const VERSION="2.0";
-
     final public function finalMethod(){ echo "Ini final method, tidak bisa di override<br>"; }
 
     public function createTask($name,$desc){
@@ -125,7 +118,7 @@ class AdvancedTaskManager extends TaskManager {
 }
 
 // ---------------------------
-// 12. Dependency Injection
+// 6. Dependency Injection
 // ---------------------------
 class User { public $username; public function __construct($username){ $this->username=$username; } }
 class App { public $user; public $tm; public function __construct($user,$tm){ $this->user=$user; $this->tm=$tm; } 
@@ -133,54 +126,54 @@ class App { public $user; public $tm; public function __construct($user,$tm){ $t
 }
 
 // ---------------------------
-// 13. Object Iteration
+// 7. Object Iteration (Fix: Tambahkan return type)
 // ---------------------------
 class TaskCollection implements \IteratorAggregate {
     private $tasks=[];
     public function addTask($task){ $this->tasks[]=$task; }
-    public function getIterator(){ return new \ArrayIterator($this->tasks); }
+    public function getIterator(): \Traversable { return new \ArrayIterator($this->tasks); }
 }
 
 // ---------------------------
-// 14. Anonymous Class
+// 8. Anonymous Class
 // ---------------------------
 $anon = new class{ public function hello(){ echo "Halo dari Anonymous Class!<br>"; } };
 
 // ---------------------------
-// 15. Exception Handling
+// 9. Exception Handling
 // ---------------------------
 try{
     $tmTest = new TaskManager("Test");
-    //$tmTest->deleteTask(999); // contoh exception aman
+    //$tmTest->deleteTask(999); // contoh aman
 }catch (\Exception $e){ echo "Error: ".$e->getMessage(); }finally{ echo "Try-catch selesai<br>"; }
 
 // ---------------------------
-// 16. Object Serialization
+// 10. Object Serialization
 // ---------------------------
 $tm = new TaskManager("Kamuu");
 $serialized = serialize($tm);
 $tmUnserialized = unserialize($serialized);
 
 // ---------------------------
-// 17. Reflection
+// 11. Reflection
 // ---------------------------
 $reflect = new \ReflectionClass($tm);
 $properties=[];
 foreach($reflect->getProperties() as $prop) $properties[]=$prop->getName();
 
 // ---------------------------
-// 18. Cloning Object
+// 12. Cloning Object
 // ---------------------------
 $tm2 = clone $tm;
 $tm2->managerName="KamuuClone";
 $tm2->createTask("Clone Task","Belajar Clone");
 
 // ---------------------------
-// 19. Static Property & Method Usage
+// 13. Static Property & Method Usage
 TaskManager::$globalTaskCount; TaskManager::who();
 
 // ---------------------------
-// 20. MVC sederhana (Model + View via HTML)
+// 14. MVC sederhana
 if(isset($_GET['delete'])) $tm->deleteTask($_GET['delete']);
 if(isset($_POST['taskName']) && isset($_POST['taskDesc'])){
     $tm->createTask($_POST['taskName'],$_POST['taskDesc']);
