@@ -1,5 +1,5 @@
 <?php
-// 13️⃣ Namespace (aman)
+// 13️⃣ Namespace 
 namespace FoodHubApp { class Menu { public function show(){echo "<b>Namespace:</b> Menu dari namespace FoodHub<br>";} } }
 namespace {
 
